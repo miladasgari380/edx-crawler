@@ -107,7 +107,8 @@ def extract_info(catalog_info_data):
                 for instructor in course['course_runs'][0]['instructors']:
                     instructors = instructors + ", " + to_string_ascii(instructor)
                 course_info.instructor = instructors
-                course_info.price = str(course['course_runs'][0]['seats'][len(course['course_runs'][0]['seats'])-1]['price']) + " " + str(course['course_runs'][0]['seats'][len(course['course_runs'][0]['seats'])-1]['currency'])
+                course_info.price = str(course['course_runs'][0]['seats'][len(course['course_runs'][0]['seats'])-1]['price']) \
+                                    + " " + str(course['course_runs'][0]['seats'][len(course['course_runs'][0]['seats'])-1]['currency'])
                 course_info.credit = str(course['course_runs'][0]['seats'][len(course['course_runs'][0]['seats'])-1]['credit_hours'])
             course_info.id = str(course['key'])
             
@@ -312,7 +313,7 @@ def main():
     catalogs_list_data = catalogs_list(access_token)
         
     # extracting all data and storing on data.me file
-    #extract_all_info(catalogs_list_data, access_token)
+#    extract_all_info(catalogs_list_data, access_token)
     
     # load the data from pickle file
     infos = pickle.load(open( "data.me", "rb" ))
