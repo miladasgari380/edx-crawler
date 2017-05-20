@@ -19,8 +19,8 @@ get_catalog_info_url = '/catalog/v1/catalogs/' # +id
 # The number of trying request if it faces to API limitation
 TRY_NUMBERS = 2
 
-client_id = 'GKT8IRxuK9ToEPsJRcHaVHwaUmcLdsbfrN025pFD'
-client_secret = 'zXWHANBLZGG8vwT7Fxp6kJMvEirzHR2CejPet2IrMjVZiH0txhVd1bkZMs5JnT9fma32VPyx3dvBnbysxDv0zp3Q5nxwbdcEVZCDcc9k50bBqE31MthFlGRIaZoklkpy'
+client_id = '###'
+client_secret = '###'
 
 
 """
