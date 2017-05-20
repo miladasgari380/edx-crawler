@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for item in info %}
+    <a href="http://{{item['url']}}">
+        <h1>{{ item['title'] }}</h1>
+    </a>
+
+    <p>
+        body: {{ item['body'] }}
+    </p>
+    <hr/>
+    {% endfor %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th>NDCG@5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="success">
+            <td>{{ndcg}}</td>
+          </tr>
+        </tbody>
+      </table>
+{% endblock %}

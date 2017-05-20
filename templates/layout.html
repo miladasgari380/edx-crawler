@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Edx Crawler</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!--<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">-->
+        <style>
+            th.des{
+              min-width:200px !important;
+              /*word-wrap:break-word !important;*/
+            }
+            td.des{
+              min-width:200px !important;
+              /*word-wrap:break-word !important;*/
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container" style="margin-left:0px; margin-right:0px;">
+        <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="col-sm-2">No.</th>
+                      <th class="col-sm-2">Category</th>
+                      <th class="col-sm-4 des">Description</th>
+                      <th class="col-sm-4">Title</th>
+                      <th class="col-sm-3">Institute</th>
+                      <th class="col-sm-3">Owner Site</th>
+                      <th class="col-sm-2">Credit</th>
+                      <th class="col-sm-3">Instructors</th>
+                      <th class="col-sm-3 des">Price (Non-free version)</th>
+                      <th class="col-sm-4">ID</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in info %}
+                    <tr>
+                      <td class="col-sm-2">{{loop.index}}</td>
+                      <td class="col-sm-2" style="background-color:#F0E68C">{{item.category}}</td>
+                      <td class="col-sm-4 des" style="background-color:#B0C4DE">{{item.description}}</td>
+                      <td class="col-sm-4" style="background-color:#E6E6FA">{{item.title}}</td>
+                      <td class="col-sm-3" style="background-color:#FAF0E6">{{item.institute}}</td>
+                      <td class="col-sm-3" style="background-color:#87CEFA">{{item.site}}</td>
+                      <td class="col-sm-2" style="background-color:#FFF0F5">{{item.credit}}</td>
+                      <td class="col-sm-3" style="background-color:#F08080">{{item.instructor}}</td>
+                      <td class="col-sm-3 des" style="background-color:#FAF0E6">{{item.price}}</td>
+                      <td class="col-sm-4" style="background-color:#FAF0E6">{{item.id}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
