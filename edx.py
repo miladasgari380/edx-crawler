@@ -313,10 +313,10 @@ def main():
     catalogs_list_data = catalogs_list(access_token)
         
     # extracting all data and storing on data.me file
-#    extract_all_info(catalogs_list_data, access_token)
+    extract_all_info(catalogs_list_data, access_token)
     
     # load the data from pickle file
-    infos = pickle.load(open( "data.me", "rb" ))
+#    infos = pickle.load(open( "data.me", "rb" ))
     
     # This removes duplicates which have same category, description and title
     # API returns duplicates so by means of toolz we can remove them from our data
